@@ -1,0 +1,21 @@
+<h1>Carts</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Original_text</th>
+      <th>Translated_text</th>
+      <th>Review_date</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @carts.each do |cart| %>
+      <tr>
+        <td><%= cart.original_text %></td>
+        <td><%= cart.translated_text %></td>
+        <td><%= cart.review_date.strftime("%d/%m/%Y") %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
