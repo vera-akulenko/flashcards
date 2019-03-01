@@ -1,4 +1,4 @@
-<h1>Carts</h1>
+<h1>Cards</h1>
 
 <table>
   <thead>
@@ -10,11 +10,11 @@
   </thead>
 
   <tbody>
-    <% @carts.each do |cart| %>
+    <% @cards.each do |card| %>
       <tr>
-        <td><%= cart.original_text %></td>
-        <td><%= cart.translated_text %></td>
-        <td><%= cart.review_date.strftime("%d/%m/%Y") %></td>
+        <td><%= card.original_text %></td>
+        <td><%= card.translated_text %></td>
+        <td><%= card.review_date.strftime("%d/%m/%Y") %></td>
       </tr>
     <% end %>
   </tbody>
