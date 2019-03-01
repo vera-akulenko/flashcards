@@ -1,0 +1,24 @@
+<ul class="navigation-links">
+  <li><%= link_to "Все карточки", cards_path %></li>
+  <li><%= link_to "Добавить карточку", controller: "cards", action: "new" %></li>
+</ul>
+
+<h1>Card <%= @card.id %></h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Original text</th>
+      <th>Translated text</th>
+      <th>Review date</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr>
+      <td><%= @card.original_text %></td>
+      <td><%= @card.translated_text %></td>
+      <td><%= @card.review_date.strftime("%d/%m/%Y") %></td>
+    </tr>
+  </tbody>
+</table>

@@ -1,0 +1,14 @@
+<body>
+  <section>
+    <p style="font-size: 22px;">
+      Отредактируйте карточку
+    </p>
+  </section>
+
+  <%= simple_form_for @card do |f| %>
+    <%= f.input :original_text %>
+    <%= f.input :translated_text %>
+    <%= f.input :review_date %>
+    <%= f.button :submit %>
+  <% end %>
+</body>

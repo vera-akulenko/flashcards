@@ -1,11 +1,17 @@
+<ul class="navigation-links">
+  <li><%= link_to "Добавить карточку", controller: "cards", action: "new" %></li>
+</ul>
+
 <h1>Cards</h1>
 
 <table>
   <thead>
     <tr>
-      <th>Original_text</th>
-      <th>Translated_text</th>
-      <th>Review_date</th>
+      <th>Original text</th>
+      <th>Translated text</th>
+      <th>Review date</th>
+      <th>        </th>
+      <th>        </th>
     </tr>
   </thead>
 
@@ -15,6 +21,8 @@
         <td><%= card.original_text %></td>
         <td><%= card.translated_text %></td>
         <td><%= card.review_date.strftime("%d/%m/%Y") %></td>
+        <td><%= link_to "Редактировать", edit_card_path(card) %></td>
+        <td><%= link_to "Удалить", card_path(card), method: :delete %></td>
       </tr>
     <% end %>
   </tbody>
