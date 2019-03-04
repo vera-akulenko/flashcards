@@ -16,7 +16,7 @@ class CardsController < ApplicationController
       flash[:success] = 'Card was added'
       redirect_to card_url(@card)
     else
-      flash[:danger] = 'Card did not save, try again'
+      flash[:errors] = 'Card did not save, try again'
       render 'new'
     end
   end
@@ -42,6 +42,6 @@ class CardsController < ApplicationController
   private
 
   def card_params
-    params.require(:card).permit(:original_text, :translated_text, :review_date)
+    params.require(:card).permit(:original_text, :translated_text)
   end
 end
