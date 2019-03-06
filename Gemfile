@@ -72,3 +72,5 @@ gem 'simple_form', '~> 4.1'
 gem 'validates_timeliness', '~> 5.0.0.alpha3'
 
 gem "umlify", "~> 1.2"
+
+gem "railroady", "~> 1.5"
