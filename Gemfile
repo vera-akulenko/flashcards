@@ -70,3 +70,5 @@ gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 gem 'nokogiri'
 gem 'simple_form', '~> 4.1'
 gem 'validates_timeliness', '~> 5.0.0.alpha3'
+
+gem "umlify", "~> 1.2"
