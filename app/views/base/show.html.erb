@@ -18,6 +18,18 @@
       <p style="font-size: 22px;">
         Первый в мире удобный менеджер флеш-карточек. Именно так.
       </p>
+
+      <p style="font-size: 22px;">
+        <p>
+          <%= if @result then 'Правильно' elsif @result == false then 'Не правильно' end %>
+        </p>
+        Введите перевод для слова
+        <%= @random_card = Card.random; nil %>
+        <% if @random_card %>
+          <p><%= @random_card.translated_text %></p>
+          <%= render partial: "original_text_form", locals: {card: @random_card} %>
+        <% end %>
+      </p>
     </section>
 
   </section>
