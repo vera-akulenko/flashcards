@@ -10,7 +10,7 @@ class Card < ApplicationRecord
   validate :original_and_translated_texts_are_not_same
 
   before_create do
-    self.review_date = Time.now + 3.day
+    self.review_date = Time.now
   end
 
   def self.random

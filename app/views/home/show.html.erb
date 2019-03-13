@@ -21,13 +21,20 @@
 
       <p style="font-size: 22px;">
         <p>
-          <%= if @result then 'Правильно' elsif @result == false then 'Не правильно' end %>
+          <%= flash[:notice] %>
         </p>
-        Введите перевод для слова
-        <%= @random_card = Card.random; nil %>
         <% if @random_card %>
+          Введите перевод для слова
           <p><%= @random_card.translated_text %></p>
-          <%= render partial: "original_text_form", locals: {card: @random_card} %>
+
+          <%= simple_form_for(@random_card, method: :get, url: root_path(@random_card)) do |f1| %>
+            <%= @random_card.original_text = nil %>
+            <%= f1.input :original_text, label: '' %>
+            <%= f1.input :id, as: :hidden, readonly: true %>
+            <%= f1.button :submit, 'Проверить' %>
+          <% end %>
+        <% else %>
+          Все карточки проверены
         <% end %>
       </p>
     </section>

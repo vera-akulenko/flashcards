@@ -1,7 +1,0 @@
-<%= simple_form_for(card, method: :get, url: root_path(card)) do |f1| %>
-  <%= card.original_text = nil %>
-  <%= f1.input :original_text, label: '' %>
-  <%= f1.input :translated_text, as: :hidden, readonly: true %>
-  <%= f1.input :id, as: :hidden, readonly: true %>
-  <%= f1.button :submit, 'Проверить' %>
-<% end %>
