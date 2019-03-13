@@ -1,0 +1,43 @@
+<head>
+  <title>Флэшкарточкер</title>
+  <link rel="stylesheet" href="application.css">
+</head>
+
+<body>
+  <section id="container">
+
+    <header class="clearfix">
+      <h1>Флэшкарточкер</h1>
+      <ul class="navigation-links">
+        <li><%= link_to "Все карточки", cards_path %></li>
+        <li><%= link_to "Добавить карточку", new_card_path %></li>
+      </ul>
+    </header>
+
+    <section>
+      <p style="font-size: 22px;">
+        Первый в мире удобный менеджер флеш-карточек. Именно так.
+      </p>
+
+      <p style="font-size: 22px;">
+        <p>
+          <%= flash[:notice] %>
+        </p>
+        <% if @random_card %>
+          Введите перевод для слова
+          <p><%= @random_card.translated_text %></p>
+
+          <%= simple_form_for(@random_card, method: :get, url: root_path(@random_card)) do |f1| %>
+            <%= @random_card.original_text = nil %>
+            <%= f1.input :original_text, label: '' %>
+            <%= f1.input :id, as: :hidden, readonly: true %>
+            <%= f1.button :submit, 'Проверить' %>
+          <% end %>
+        <% else %>
+          Все карточки проверены
+        <% end %>
+      </p>
+    </section>
+
+  </section>
+</body>
